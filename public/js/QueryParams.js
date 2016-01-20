@@ -7,7 +7,7 @@ function getQueryVariable(variable){
 		
 		if(decodeURIComponent(pair[0]) == variable){
 			
-			return decodeURIComponent(pair[1]);
+			return decodeURIComponent(pair[1].replace(/\+/g, ' '));
 		}
 	}
 	return undefined;

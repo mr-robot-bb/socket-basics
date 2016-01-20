@@ -6,7 +6,13 @@ var socket = io();
 
 socket.on('connect', function(){
 	console.log('Connected to socket.io server');
+	socket.emit('JoinRoom', {
+		name: name,
+		room: room
+	});
 });
+
+jQuery('.room-title').text(room);
 
 socket.on('message', function(message){
 	console.log('New message');
